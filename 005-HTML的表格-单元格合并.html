@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>表格单元格合并,th标签</title>
+</head>
+<body>
+	<table align="center" border="1px" width="50%">
+		<tr>
+			<!--th标签也是单元格标签，比td多的是居中、加粗-->
+			<th>员工编号</th>
+			<th>员工薪资</th>
+			<th>员工名称</th>
+		</tr>
+		<tr>
+			<td colspan="2">1</td>
+			<!--col合并单元格，没有其他要求，删谁都可以-->
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>a</td>
+			<td>b</td>
+			<td rowspan="2">c</td>
+		</tr>
+		<tr>
+			<td>x</td>
+			<td>y</td>
+			<!--row合并单元格，删除下方的单元格|-->
+			<!--<td>z</td>-->
+		</tr>
+	</table>
+</body>
+</html>
