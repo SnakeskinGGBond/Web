@@ -16,7 +16,13 @@
 			学历
 			简介
 	-->
-	<form action="http://lokalhost:8080/jd/register">
+	<!-- 
+		form表单method属性
+		get:用户提交的信息会显示在浏览器的地址栏上
+		post:提交的数据格式和get是一样的,只是用户提交的信息不会显示在浏览器的地址栏上
+		不指定时默认get
+		  -->
+	<form action="http://lokalhost:8080/jd/register" method="post">
 		用户名
 		<input type="text" name="username"/>
 		<br>
@@ -45,6 +51,12 @@
 		</select>
 		<br>
 		简介
+		<textarea rows="10" cols="30" name="introduce" ></textarea>
+		<br>
+		<input type="submit" value="注册">
+		<input type="reset" value="返回">
 	</form>
+	<!-- 超链接也可以提交数据,但是提交的数据时固定的 ,且超链接是get请求-->
+	<a href="http://lokalhost:8080/jd/register?username=111&password=111">超链接提交数据</a>
 </body>
 </html>
