@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表单form</title>
+</head>
+<body>
+	<!--
+		1\表单的作用:
+			收集用户信息,表单展现之后用户填写,点击提交按钮,将数据交给服务器
+		2\画表单:<form></form>
+		3\表单的action属性:服务器地址,与href一样,都可以向服务器发送request(请求)
+		4\表单提交的格式:
+			http://localhost:8080/jd/login?username=admin&password=123
+
+			action?name=value&name=value&name=value...
+			java String split("&")
+
+			标签中没有name属性就不会提交
+	-->
+	<form action="http://localhost:8080/jd/login">
+		<!--
+			画一个提交按钮,这个按钮可以提交表单
+			使用input输入域,type="submit"表示该按钮是一个提交按钮,具有提交表单的能力,必须有name属性
+
+			按钮上的value是设置按钮的显示内容的,文本框,密码的value不用指定,用户输入什么value就是什么,当value没写时,默认值是空字符串"",会将空字符串提交给服务器
+
+			intpt标签type的值:
+				button 按钮
+				submit 提交
+				text 文本框
+				reset 重置
+				password 密码
+				radio 单选
+				checkbox 复选框
+		-->
+		<td>用户名</td>
+		<input type="text" name="username">
+		<br>
+		<td>密码</td>
+		<input type="password" name="password">
+		<br>
+		<input type="submit" value="登录" />
+		<input type="button" value="按钮"/>
+		<input type="reset" value="清空" />
+	</form>
+</body>
+</html>
