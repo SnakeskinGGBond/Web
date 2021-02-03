@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS函数初步</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    /*
+			1\js中的函数:
+				等同于java中的方法,一般可以完成某个特定的功能
+			2\Java中:
+				public static boolean login(String name,String pwd){
+					...
+					return true;
+				}
+			3\js中的变量是弱类型,定义函数:
+				JS中的函数不需要指定返回值类型
+				语法格式:
+					第一种方式:
+					function 函数名(形参列表){
+						函数体;
+					}
+					第二种方法:
+					函数名 = function(形参列表){
+						函数体;
+					}
+			4\函数必须调用才能执行
+		 */
+    function sum(a, b) {
+        //a,b都是变量名,随便起,且都是局部变量,都是形参
+        alert(a + b);
+    }
+    sum(10, 20);
+
+    sayHello = function(name) {
+        alert("hello" + name);
+    };
+    </script>
+    <input type="button" name="hello" value="hello" onclick="sayHello('jbp');" />
+</body>
+
+</html>

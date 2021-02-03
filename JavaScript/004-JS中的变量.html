@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS中的变量</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    //js是一种弱类型语言,没有编译阶段,一个变量可以随意赋值
+    //变量默认值:undefined,undefined是一个具体存在的值!
+    var i;
+    alert("i=" + i);
+
+    //一个变量没有声明/定义会出现:Uncaught ReferenceError: age is not defined,这是一个错误!
+    //alert("age="+age);
+
+    var a, b, c = 200;
+    alert(a); //undefined
+    alert(b); //undefined
+    alert(c); //200
+    </script>
+</body>
+
+</html>
