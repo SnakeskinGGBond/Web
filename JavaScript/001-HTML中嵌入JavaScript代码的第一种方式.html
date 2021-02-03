@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML中嵌入js代码的第一种方式</title>
+</head>
+
+<body>
+    <!-- 1\实现的功能:
+			用户点击按钮,弹出消息框
+		 2\js是一门时间驱动型的变成语言,依靠事件去驱动,然后执行对应的程序.
+		   在js中有很多事件,其中一个叫:鼠标单击-click,且任何事件斗会对应一个事件句柄-onclick.[事件和事件句柄的区别是:事件句柄是在事件单词前添加一个on],而时间句柄是以HTML标签属性存在的
+		 3\onclick="js代码"的执行原理:
+		 	页面打开时,js代码不会执行,只是把这段js代码注册到按钮的click事件上,当click事件发生后,这段代码会被浏览器自动调用
+		 4\使用js代码弹出消息框
+		 	js中有一个内置对象:window,代表的是浏览器对象,window对象有个函数叫:alert,用法:window.alert('消息')
+		 5\js中的字符串可以使用单引号,也可以使用双引号
+		 6\js中的一条语句结束后可以使用分号,也可以不用
+	 -->
+    <input type="button" value="hello" onclick="window.alert('hello js')" />
+    <input type="button" value="hello2" onclick="alert('hello1');
+												 alert('hello2');
+												 alert('hello3');" />
+</body>
+
+</html>
