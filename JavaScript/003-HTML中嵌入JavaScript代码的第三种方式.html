@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>引入外部独立的js文件</title>
+</head>
+<body>
+	<script type="text/javascript" src="js/1.js">
+		//结束的script标签必须有
+		//引入js文件时,此处的代码不会执行
+	</script>
+	<!-- 同一个js文件可以多次被引用 -->
+	<script type="text/javascript" src="js/1.js"></script>
+
+	<!-- 引入脚本文件后,也可以继续使用脚本块,自上而下执行 -->
+	<script type="text/javascript">
+		alert("123");
+	</script>
+</body>
+</html>
