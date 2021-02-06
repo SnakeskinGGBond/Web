@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Js中的常用事件</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+			JS中的事件
+				1\ blur 失去焦点
+				2\ focus 获得焦点
+
+				3\ click 鼠标单击
+				4\ dblclick 鼠标双击
+
+				5\ keydown 键盘按下
+				6\ keyup 键盘弹起
+
+				7\ mousedown 鼠标按下
+				8\ mouseup 鼠标弹起
+				9\ mousemove 鼠标移动
+				10\ mouseover 鼠标经过
+				11\ mouseout 鼠标离开
+
+				12\ reset 表单重置
+				13\ submit 表单提交
+
+				14\ change 下拉列表选中项改变,或者文本框内容改变
+				15\ select 文本被选定
+				16\ load 页面加载完毕
+			任何一个时间都会对应一个事件句柄(在事件前加on)
+		 */
+		//对于当前程序来说,sayhello函数被称为回调函数(callback)
+		//特点:自己写出函数,但是此函数不是自己负责调用,由其他程序负责调用该函数
+		function sayHello() {
+			alert("hello JS");
+			// body...
+		}
+	</script>
+	<!-- 第一种注册事件的方式 -->
+	<input type="button" name="sayhello" value="button1" onclick="sayHello()"/>
+
+	<!-- 第二种事件的注册方式,使用纯JS代码完成事件的注册 -->
+	<input type="button" name="button2" value="button2" id="mybutton">
+
+	<input type="button" name="button3" value="button3" id="button3">
+
+	<input type="button" name="button4" value="button4" id="button4"/>
+
+	<script type="text/javascript">
+		function doSome() {
+			alert("do some");
+			// body...
+		}
+		//获取按钮对象
+		var buttonObj = document.getElementById('mybutton');
+		//给按钮对象的onclick属性赋值
+		//注意!!!doSome后不加小括号
+		//将回调函数doSome注册到click事件上
+		buttonObj.onclick = doSome;
+
+		var bt3 = document.getElementById('button3');
+		//匿名函数,也是回调函数
+		bt3.onclick = function () {
+			alert("button3 test");
+			// body...
+		}
+
+		//合成一行代码
+		document.getElementById('button4').onclick = function () {
+			alert("button4 test");
+			// body...
+		}
+	</script>
+</body>
+</html>
