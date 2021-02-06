@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS中的数据类型</title>
+</head>
+
+<body>
+    <script>
+    /*
+		 	1`JS中数据类型有:原始数据类型,引用数据类型
+		 	原始数据类型:undefined,Number,String,Boolean,Null
+		 	引用数据类型:Object,及Object的子类
+
+		 	2`ES规范,ES6之后添加了新的类型:Symbol
+
+		 	3`JS中有个运算符:typeof,这个运算符可以在程序的运行阶段动态获取变量的数据类型
+			tyepeof运算符的语法格式:
+				typeof 变量名;
+			typeof运算符的与运算结果是以下6个字符串之一:注意字符串全部小写:
+				undefined
+				number
+				string
+				boolean
+				object
+				function
+
+		 */
+
+    function sum(a, b) {
+        if (typeof a == "number" && typeof b == "number") {
+           return a + b;
+        } else {
+        	alert("发生错误!");
+        }
+
+    }
+    alert(sum(1,true));
+
+    var a = null;
+    alert(typeof a);//"object"
+
+    var b = NaN;
+    alert(typeof b);//number"
+
+    alert(typeof sum);//"function"
+    </script>
+</body>
+
+</html>

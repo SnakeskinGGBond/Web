@@ -24,6 +24,15 @@
 
 		//访问全局变量
 		alert("username = " + username); 
+
+		//注意!!
+		//变量声明时未用var的变量默认是全局变量,任何地方都可以访问
+		//声明时用var: var myname,则默认是局部变量
+		function myfun() {
+			myname = "jbp";
+		}
+		myfun();
+		alert(myname);
 	</script>	
 
 </body>
