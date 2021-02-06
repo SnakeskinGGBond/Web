@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>String类型</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+			1`在js中可以使用单引号,也可以使用双引号
+			2`在js中创建字符串对象
+				var s = "abc";
+				var s2 = new String("abc");
+			3`大String和小string,方法和属性都是通用的
+			4`String类型的常用属性和函数:
+				属性:
+					length
+					constructor
+					prototype
+				函数:
+					indexOf 获取指定字符串在当前字符串中第一次出现处的索引
+					lastIndexOf 获取指定字符串在当前字符串中最后一次出现处的索引
+					replace 替换
+					split 拆分字符串
+					substring 截取子字符串
+					substr 截取子字符串
+					toLowerCase 转小写
+					toUpperCase 转大写
+		 */
+		//小string
+		var s = "abc";
+		alert(typeof s);//string,原始类型
+
+		//大String
+		//var s2 = new String("abc");
+		//alert(typeof s2);//object
+
+		//indexOf();
+		var str = "https://www.baidu.com";
+		alert(str.indexOf("https"));//0
+		alert(str.indexOf("cn")); //-1
+		//判断一个字符串中是否包含某个子字符串
+		alert(str.indexOf("cn") >= 0 ? "包含" : "不包含");
+
+		//replace
+		var str1 = "name=value%name=value%name=value";
+		alert(str1.replace("%","&"));
+
+		//substr和substring的区别
+		var str2 = "abcdefghi";
+		alert(str2.substr(2,4)); //cdef,substr(staIndex,length)
+		alert(str2.substring(2,4)); //cd,substring(staIndex,endIndex),不包含endIndex
+	</script>
+</body>
+</html>
