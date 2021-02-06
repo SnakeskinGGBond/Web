@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Number类型</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+			值:
+				-1 1 2 3 4 ....
+				NaN 不是数字
+				Infinity 无穷大
+		 */
+		var a = Infinity;
+		alert(typeof a);
+
+		//NaN not a Number
+		//运算结果本来应该是一个数字,最后算完不是一个数字的时候,结果是NaN
+		var a = 100;
+		var b = "z";
+		alert(a / b);
+
+		var c = "aaa";
+		var d = 100;
+		var f = c + d;
+
+		alert(typeof f);//string,+两边如果有字符串的话,会做字符串拼接
+
+		//Infinity 当除数为0时,结果是无穷大
+		alert(10 / 0);
+
+		alert(10 / 3);//3.33333333333
+
+		//isNaN函数
+		//isNaN(数据),结果是true表示不是一个数字,结果是false,表示是一个数字
+		function sum(a,b) {
+			if (isNaN(a) || isNaN(b)) {
+				alert("错误");
+				return;
+			}
+			return a + b;
+		}
+		alert(sum(100,"abc"));
+		alert(sum(100,200));
+
+		//parseInt() 函数 可以将字符串自动转换成数字,并且取整数位
+		alert(parseInt("3.9999"));//3
+
+		//parseFloat() 函数 可以将字符串自动转换成数字,
+		alert(parseFloat("3.2") + 1);//4.2
+
+		//Math.ceil() 函数(Math是数学类,向上取整)
+		alert(Math.ceil(1.1));//2
+		
+	</script>
+</body>
+</html>
