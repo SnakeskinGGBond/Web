@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS的局部变量和全局变量</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+		全局变量
+			生命周期是浏览器打开时声明,浏览器关闭时销毁,少用
+		局部变量
+			在函数体中声明的变量,生命周期:函数开始执行时局部变量的内存空间 开辟,函数执行结束后内存空间释放
+		*/
+		//全局变量
+		var username = 'jack';
+		function access() {
+			var username = "zhangsan";
+			alert("username = " + username);
+		}
+		//调用函数
+		access();
+
+		//访问全局变量
+		alert("username = " + username); 
+	</script>	
+
+</body>
+</html>
