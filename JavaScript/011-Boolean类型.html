@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolean类型</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    /*
+		js中的布尔类型 只有两个值:
+			true    false
+		在Boolean类型中有一个函数叫做:Boolean();
+		将非Boolean类型的数据转换成Boolean类型,如果变量有值返回true,没有值返回false
+	 */
+    var username = 'tom';
+    if (username) { //相当于 if(Boolean(username)){}
+        alert("welcome" + username);
+    } else {
+        alert('用户名不能为空');
+    }
+
+    //true
+    alert(Boolean(1));
+    alert(Boolean("abc"));
+    alert(Boolean(Infinity));
+
+    //false
+    alert(Boolean(0));
+    alert(Boolean(""));
+    alert(Boolean(null));
+    alert(Boolean(NaN));
+    alert(Boolean(undefined));
+    
+    for (var i = 10; i < 10; i++) {
+    	alert(i);
+    }
+    </script>
+</body>
+
+</html>
