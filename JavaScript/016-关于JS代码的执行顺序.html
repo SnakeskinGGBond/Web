@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- load事件在页面全部元素加载完毕后才会发生 -->
+<body onload="ready()">
+    <script type="text/javascript">
+    //id是hello的元素还没加载到内存
+    //Document.getElementByid('hello').onclick = function() {
+    //     alert("hello");
+    // body...
+    // }
+
+    function ready() {
+        document.getElementById('hello').onclick = function() {
+            alert("hello");
+        }
+    }
+    </script>
+    <input type="button" name="hello" value="hello" id="hello" />
+</body>
+
+</html>
