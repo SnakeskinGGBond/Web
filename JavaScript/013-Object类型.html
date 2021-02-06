@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object类型</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    /*
+			1\Object是所有类型的超类,自定义的任何类型默认继承Object
+			2\Object的属性
+				prototype(常用):给类动态的扩展属性和函数   
+				constructor
+			3\Object的函数:
+				toString();
+				valueOf();
+				toLocaleString();
+			4\所有类默认继承object,会继承所有的属性和函数
+			5\在js中定义类,new 对象
+				定义类:
+					第一种:
+					function 类名(形参){
+	
+					}
+					第二种:
+					类名 = function(形参){
+	
+					}
+
+				创建对象:
+				new 构造方法名(实参); 构造方法名和类名一致
+		 */
+
+    function sayHello() {
+
+    }
+    //把sayHello当做普通函数调用
+    sayHello();
+
+    //把sayHello当做一个类
+    //obj是一个引用,保存内存地址指向堆中对象
+    var obj = new sayHello();
+    alert(obj); //[object Object]
+
+    //JS中类的定义,同时又是一个构造函数的定义,两者是一起来完成的
+    function User(no, name, age) {
+        //声明属性
+        //User类中有三个属性sno,sname,sage
+        this.sno = no;
+        this.sname = name;
+        this.sage = age;
+    }
+
+    //创建对象
+    var u1 = new User(111, "zhangsan", 18);
+    //访问对象的属性
+    alert(u1.sno +
+        u1.sanme +
+        u1.sage);
+    //访问一个对象的属性,还可以:
+    var u2 = new User(222, "lisi", 20);
+    alert(u2["sno"] +
+        u2["sname"] +
+        u2["sage"]);
+
+    //定义类的另一种语法
+    Emp = function(eno, ename) {
+        this.eno = eno;
+        this.ename = name;
+    }
+    var e1 = new Emp(111, "Tom");
+
+    Product = function(pno, pname, price) {
+        //属性
+        this.no = pno;
+        this.name = pname;
+        this.price = price;
+        //函数
+        this.getPrice = function() {
+            return this.price;
+        }
+    }
+    var p1 = new Product(111, "西瓜", 4.0);
+
+    var pri = p1.getPrice();
+    alert(pri);
+    //通过prototype,给类扩展属性以及函数
+    Product.prototype.getPname = function() {
+        return this.name;
+    };
+    var xigua = p1.getPname();
+    alert(xigua);
+
+    //给String扩展函数
+    String.prototype.suiyi = function() {
+        alert("这是给String类型扩展的函数");
+    };
+    "abc".suiyi();
+    </script>
+</body>
+
+</html>
