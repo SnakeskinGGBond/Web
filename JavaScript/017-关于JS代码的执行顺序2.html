@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    //页面加载过程中,将a函数注册给了load事件
+    //页面加载完毕之后,load事件发生了,此时执行回调函数a
+    //a执行的过程中,把b注册给了click事件
+    //当click事件发生后,b函数被调用
+    window.onload = function() { //这个回调函数叫做a
+        document.getElementById('hello').onclick = function() {//这个回调函数叫做b
+            alert("hello");
+        }
+    }
+    </script>
+    <input type="button" name="hello" value="hello" id="hello" />
+</body>
+
+</html>
