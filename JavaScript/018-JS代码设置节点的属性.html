@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>设置节点属性</title>
+</head>
+<body>
+	<script type="text/javascript">
+		window.onload = function () {
+			document.getElementById('btn').onclick = function () {
+				var wenbenkuang = document.getElementById("wenbenkuang");
+				var anniu = document.getElementById("btn");
+				//一个节点对象中只要有的属性 都可以"."
+				wenbenkuang.type = "checkbox";
+				anniu.value = "转换成功"
+			}
+		}
+	</script>
+	<input type="text" id="wenbenkuang">
+	<input type="button" name="zhuanhuan" value="转换" id="btn"/>
+</body>
+</html>
