@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM-获取文本框的value</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    /*
+			1\JS的三大块
+				ECMAScript
+					ES规范
+				DOM
+					document.getElementById,HTML文档被看成一颗DOM树
+				BOM
+					关闭浏览器窗口,新建浏览器窗口,前进,后退,地址栏上的地址
+			2\DOM  BOM的区别与联系
+				BOM的顶级对象是window
+				DOM的顶级对象是Document
+				实际上BOM是包括DOM的
+		 */
+    window.onload = function() {
+        document.getElementById("btn").onclick = function() {
+            //alert("111");
+            alert(document.getElementById("username").value);
+        }
+
+        document.getElementById("btn2").onclick = function() {
+        	document.getElementById("text1").value = document.getElementById("username").value;
+        	document.getElementById("username").value = "";
+
+        }
+    }
+    </script>
+    <input type="text" id="username">
+    <br>
+    <input type="text" id="text1">
+    <input type="button" id="btn" value="获取文本">
+    <input type="button" id="btn2" value="变更">
+    <br>
+    <!-- 以下代码中的this代表的是当前input节点对象,this.value就是这个节点对象的value属性 -->
+    <input type="text" onblur="alert(this.value)">
+</body>
+
+</html>
