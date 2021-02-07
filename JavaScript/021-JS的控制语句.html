@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+    /*
+			1\if
+			2\switch
+			3\while
+			4\do while
+			5\for
+			6\break
+			7\continue
+			8\for in
+			9\with
+		 */
+    //创建数组
+    var arr = [false, true, 1, 2, "abc",3.14];
+    //遍历
+    for (var i = 0; i < arr.length; i++) {
+    	alert(arr[i]);
+    }
+    //for in
+    for(var i in arr){
+    	alert[i];
+    }
+
+    //for in 遍历对象属性
+    function User(username,password) {
+    	this.username = username;
+    	this.password = password;
+    }
+    var u = new User("张三",111);
+    alert(u.username+","+u.password);
+    alert(u["username"]+","+u["password"]);
+
+    //遍历u对象的属性
+    for(var shuxing in u){
+    	alert(u[shuxing]);
+    }
+
+    with(u){
+    	alert(username);
+    	alert(password);
+    }
+    </script>
+</body>
+
+</html>
