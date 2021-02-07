@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>innerHTML和innerText</title>
+	<style type="text/css">
+		.test{
+			border: 2px solid red;
+			width: 100px;
+			height: 100px;
+		}
+	</style>
+</head>
+<body>
+	<!--
+		innerHTML和innerText
+		innerHTML会把后边的字符串当做一段HTML代码解释并执行
+		innerText会把后边的字符串当做普通字符串
+	 -->
+	 <script type="text/javascript">
+	 	window.onload = function () {
+	 		document.getElementById("btn").onclick = function () {
+	 			document.getElementById("div1").innerText = "<font color = blue> asdfzxcv!!</font>";
+	 		}
+
+	 		document.getElementById("btn2").onclick = function () {
+	 			document.getElementById("div1").innerHTML = "<font color = blue> asdfzxcv!!</font>";
+	 		}
+	 	}
+	 </script>
+
+	 <input type="button" value="设置内容innerText" id="btn"/>
+	 <input type="button" value="设置内容innerHTML" id="btn2"/>
+	 <div class="test" id="div1"></div>
+</body>
+</html>
