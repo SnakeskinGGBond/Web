@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>去除字符串前后空白</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//低版本的ie浏览器不支持字符串的trim();函数,需要对String类进行扩展
+		//this代表的事当前字符串
+		//replace("a","b");将字符串中的a替换成b
+		/**
+		 * 扩展的trim函数,去除字符串前后的空白
+		 * @return {String} 去除前后空白后的字符串
+		 */
+		String.prototype.trim = function() {
+			return this.replace(/^\s+|\s+$/g,"");
+		};
+	</script>
+</body>
+</html>
