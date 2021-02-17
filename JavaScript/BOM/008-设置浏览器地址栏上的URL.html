@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>URL</title>
+</head>
+<body>
+<script type="text/javascript">
+    function goBaidu() {
+        var locationObj = window.location;
+        locationObj.href = "https://www.baidu.com";
+    }
+</script>
+<input type="button" value="百度" onclick="goBaidu()"/>
+</body>
+</html>
+<!--
+    总结:通过浏览器往服务器发送请求的方法:
+        1\表单form的提交
+        2\超链接
+        3\document.location
+        4\window.location
+        5\window.open
+        6\直接地址栏输入URL
+
+        以上所有请求都可写到数据给服务器,只要通过表单提交的数据才是动态的
+-->
