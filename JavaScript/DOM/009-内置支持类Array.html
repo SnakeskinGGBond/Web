@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array</title>
+</head>
+<body>
+<script type="text/javascript">
+    //创建长度为0的数组
+    var arr = [];
+
+    //数据类型随意
+    var arr2 = [1, 2, 3, false, "abc", 3.14];
+    alert(arr2.length);
+
+    //下标不会越界,自动扩容,没有传值的自动undefined
+    arr2[8] = "test";
+    document.writeln();
+
+    //遍历
+    for (var i = 0; i < arr2.length; i++) {
+        document.writeln(arr2[i])
+    }
+
+    //另一种创建数组对象的方式
+    var a = new Array();//长度是0
+
+    var b = new Array(3);//长度是3
+
+    var c = new Array(1,2,3);//长度是2,有两个元素,1和2
+
+    var str = c.join("-");
+    alert(str);//1-2-3
+
+    //在数组的末尾添加一个元素
+    c.push(10);
+    alert(c.join("-"));//1-2-3-10
+
+    //将数组末尾的元素弹出
+    var endNum = c.pop();//返回被弹出的元素
+    alert(endNum);//10
+    alert(c.join("-"));//1-2-3
+
+    //模拟栈数据结构:先进先出,先进后出
+
+    //反转数组
+    c.reverse();
+    alert(c.join("="));
+
+</script>
+</body>
+</html>
