@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>表单验证</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var submitBtn = document.getElementById('submitBtn');
+		submitBtn.onclick = function() {
+			//使用JS代码触发事件
+			usernameElt.focus();
+			userFormElt.blur();
+		}
+		//当所有表单合法,提交
+		if (合法) {
+			var uerFormElt = document.getElementById('userform');	
+			userFormElt.submit();
+		}
+		
+		
+	</script>
+	<input type="button" id="submitBtn">
+	<form id="userform" action="http://localhost:8080/jd/save" method="get">
+		用户名<input type="text" name="username" id="username">
+		密码<input type="text" name="password" id="password">
+		确认密码<input type="text" name="conpwd" id="conpwd">
+		邮箱<input type="text" name="email" id="email">
+	</form>
+
+</body>
+</html>

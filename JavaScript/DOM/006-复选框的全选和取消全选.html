@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>复选框的全选和取消全选</title>
+</head>
+<body>
+	<script type="text/javascript">
+		/*
+		window.onload = function() {
+			var quanXuan = document.getElementById('quanxuan');
+			quanXuan.onclick = function() {
+				//获取全选复选框的选中状态(checkbox对象)
+				//根据name获取所有元素
+				var aihaos = document.getElementsByName('aihao');
+				// if (quanXuan.checked) {
+				// 	//全选
+				// 	document.getElementById('smoke').checked = true;
+				// 	document.getElementById('drink').checked = true;
+				// 	document.getElementById('tt').checked = true;
+				// } else {
+				// 	//取消全选
+				// 	document.getElementById('smoke').checked = false;
+				// 	document.getElementById('drink').checked = false;
+				// 	document.getElementById('tt').checked = false;
+				// }
+				//alert("1");
+				if (quanXuan.checked) {
+					//全选
+					for (var i = 0; i < aihaos.length; i++) {
+						aihaos[i].checked = true;
+					}
+				} else {
+					//取消全选
+					for (var i = 0; i < aihaos.length; i++) {
+						aihaos[i].checked = false;
+					}
+				}
+			}
+		}
+		*/
+		window.onload = function () {
+			var quanXuan = document.getElementById('quanxuan');
+			var aihaos = document.getElementsByName('aihao');
+			quanXuan.onclick = function () {
+				for (var i = 0; i < aihaos.length; i++) {
+					aihaos[i].checked = quanXuan.checked;
+				}
+			}
+
+			var all = aihaos.length;
+			for (var i = 0; i < aihaos.length; i++) {
+				aihaos[i].onclick = function () {
+					var cc = 0;
+					for (var i = 0; i < aihaos.length; i++) {
+						if (aihaos[i].checked) {
+							cc++;
+						}
+					}
+					quanXuan.checked = (all == cc);
+				}
+			}
+		}
+	</script>
+	<input type="checkbox" name="aihao" value="smoke" id="smoke" />抽烟<br>
+	<input type="checkbox" name="aihao" value="drink" id="drink" />喝酒<br>
+	<input type="checkbox" name="aihao" value="tt" id="tt" />烫头<br>
+	<input type="checkbox" id="quanxuan">全选<br>
+</body>
+</html>
