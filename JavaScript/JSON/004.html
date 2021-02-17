@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设置table的tbody</title>
+</head>
+<body>
+<script type="text/javascript">
+    //有json数据
+    var data = {
+        "total": 4,
+        "emps": [
+            {
+                "empno": 101,
+                "ename": "zhangsan",
+                "sal": 800
+            },
+            {
+                "empno": 102,
+                "ename": "lisi",
+                "sal": 1800
+            },
+            {
+                "empno": 103,
+                "ename": "wangwu",
+                "sal": 2800
+            }
+        ]
+    }
+    //将数据展示到table中
+    window.onload = function () {
+        var displayBtnElt = document.getElementById('displayBtn');
+        displayBtnElt.onclick = function () {
+            var emps = data.emps;
+            var html = "";
+            for (var emp of emps) {
+                html += "<tr>";
+                html += "<td>"+emp.empno+"</td>";
+                html += "<td>"+emp.ename+"</td>";
+                html += "<td>"+emp.sal+"</td>";
+                html += "</tr>"
+            }
+            document.getElementById('empTbody').innerHTML = html;
+            document.getElementById('count').innerHTML = data.total;
+        }
+    }
+
+</script>
+<input type="button" id="displayBtn" value="显示员工信息"/>
+<h2>员工信息列表</h2>
+<hr>
+<table border="1px" width="50%">
+    <tr>
+        <th>员工编号</th>
+        <th>姓名</th>
+        <th>员工薪资</th>
+    </tr>
+    <tbody id="empTbody">
+
+    </tbody>
+</table>
+总共<span id="count">0</span>条数
+</body>
+</html>
